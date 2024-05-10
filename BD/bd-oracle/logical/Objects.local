@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="EntityView" objectID="7B4135B3-BA1A-A401-2BE3-48DBBA019BAD" name="filme" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.EntityView" propertyParentId="2F26CB50-F854-83E7-639E-A52A397F17C1" propertySourceId="" propertyTargetId=""/>
+   <object objectType="EntityView" objectID="30750CFD-0FEC-94FB-3467-8DCA2D76F51B" name="VIEW_3" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.EntityView" propertyParentId="2F26CB50-F854-83E7-639E-A52A397F17C1" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>
