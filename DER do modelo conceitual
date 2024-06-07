@@ -1,0 +1,64 @@
+@startuml
+!theme minty
+skinparam linetype ortho
+
+' Definindo estilos para uma aparência profissional e cores para cada entidade
+skinparam class {
+    BackgroundColor<<Produto>> #E3F2FD
+    BackgroundColor<<Movimentação>> #E8F5E9
+    BackgroundColor<<Histórico_Preço>> #FFF9C4
+    BorderColor black
+    ArrowColor black
+    FontSize 12
+    FontStyle bold
+    FontColor black
+    AttributeFontColor black
+    AttributeFontSize 11
+    MethodFontColor black
+    MethodFontSize 11
+}
+
+' Definindo as classes
+entity Produto <<Produto>> {
+  * código: int
+  --
+  * marca: string
+  * preço_venda: float
+  descrição: string
+  referência_fabricante: string
+  custo_médio: float
+  data_última_alteração_preço: date
+}
+
+entity Movimentação <<Movimentação>> {
+  * id: int
+  --
+  * data_hora: datetime
+  * tipo_movimentação: char(1) <<E, S>>
+  * tipo_documento: string
+  * número_documento: string
+  * quantidade_movimentada: int
+  * saldo_anterior: int
+  * saldo_atual: int
+  custo_médio: float
+  -- 
+  * código_produto: int
+}
+
+entity Histórico_Preço <<Histórico_Preço>> {
+  * id: int
+  --
+  * data_alteração: date
+  * porcentagem_aumento: float
+  * preço_anterior: float
+  * novo_preço: float
+  --
+  * código_produto: int
+}
+
+' Definindo os relacionamentos com distância
+Produto ||--o{ Movimentação
+Produto ||--o{ Histórico_Preço
+
+' Ajustando o layout para clareza com espaçamento
+@enduml
